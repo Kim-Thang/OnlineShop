@@ -1,0 +1,17 @@
+﻿@model List<Category> 
+
+
+<partial name="_Notification" />
+<h1>
+	Category list 1
+</h1>
+<a asp-controller="Category" asp-action="Create">Create new category </a>
+<ul>
+	@foreach (var item in Model)
+	{
+		<li>@item.Name</li>
+		<li>@item.DisplayOrder</li>
+		<a asp-controller="Category" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+		<a asp-controller="Category" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+	}
+</ul>
